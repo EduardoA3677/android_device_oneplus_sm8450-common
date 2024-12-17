@@ -7,3 +7,6 @@
 # udon
 on property:ro.boot.prjname=22881
     setprop ro.boot.hardware.revision "IN"
+
+on property:ro.boot.prjname=22803
+    setprop ro.boot.hardware.revision "CN"

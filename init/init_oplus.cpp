@@ -41,7 +41,10 @@ void vendor_load_properties() {
             OverrideProperty("ro.product.product.model", "CPH2487");
             break;
         case 22803:
-            OverrideProperty("ro.product.product.model", "PHK110");    
+            OverrideProperty("ro.product.device", "OP5913L1");
+            OverrideProperty("ro.product.vendor.device", "OP5913L1");
+            OverrideProperty("ro.product.product.model", "PHK110");
+            OverrideProperty("persist.vendor.display.pxlw.iris_feature", "0x407f0780");
             break;
         default:
             LOG(ERROR) << "Unexpected project name: " << prjname;

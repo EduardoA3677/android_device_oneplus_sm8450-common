@@ -304,10 +304,9 @@ echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
 # Setting b.L scheduler parameters
 echo 95 95 > /proc/sys/walt/sched_upmigrate
 echo 85 85 > /proc/sys/walt/sched_downmigrate
-echo 400 > /proc/sys/walt/sched_group_upmigrate
-echo 380 > /proc/sys/walt/sched_group_downmigrate
+echo 100 > /proc/sys/walt/sched_group_upmigrate
+echo 85 > /proc/sys/walt/sched_group_downmigrate
 echo 1 > /proc/sys/walt/sched_walt_rotate_big_tasks
-echo 1000 > /proc/sys/walt/sched_min_task_util_for_colocation
 echo 400000000 > /proc/sys/walt/sched_coloc_downmigrate_ns
 echo 39000000 39000000 39000000 39000000 39000000 39000000 39000000 5000000 > /proc/sys/walt/sched_coloc_busy_hyst_cpu_ns
 echo 240 > /proc/sys/walt/sched_coloc_busy_hysteresis_enable_cpus
@@ -321,18 +320,16 @@ echo 15 15 15 15 15 15 15 15 > /proc/sys/walt/sched_util_busy_hyst_cpu_util
 echo 325 > /proc/sys/walt/walt_low_latency_task_threshold
 
 # cpuset parameters
-echo 0-3 > /dev/cpuset/background/cpus
+echo 0-1 > /dev/cpuset/background/cpus
+echo 0-1 > /dev/cpuset/restricted/cpus
 echo 0-3 > /dev/cpuset/system-background/cpus
+echo 0-6 > /dev/cpuset/foreground/cpus
 
 # Turn off scheduler boost at the end
 echo 0 > /proc/sys/walt/sched_boost
 
 # Reset the RT boost, which is 1024 (max) by default.
 echo 0 > /proc/sys/kernel/sched_util_clamp_min_rt_default
-
-# Limit kswapd in cpu0-6
-echo `ps -elf | grep -v grep | grep kswapd0 | awk '{print $2}'` > /dev/cpuset/kswapd-like/tasks
-echo `ps -elf | grep -v grep | grep kcompactd0 | awk '{print $2}'` > /dev/cpuset/kswapd-like/tasks
 
 # configure governor settings for silver cluster
 echo "walt" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
@@ -499,13 +496,5 @@ case "$console_config" in
 		echo "Enable console config to $console_config"
 	;;
 esac
-
-chown -h system.system /sys/devices/system/cpu/cpufreq/policy0/schedutil/target_loads
-chown -h system.system /sys/devices/system/cpu/cpufreq/policy4/schedutil/target_loads
-chown -h system.system /sys/devices/system/cpu/cpufreq/policy7/schedutil/target_loads
-
-#config fg and top cpu shares
-echo 5120 > /dev/cpuctl/top-app/cpu.shares
-echo 4096 > /dev/cpuctl/foreground/cpu.shares
 
 setprop vendor.post_boot.parsed 1

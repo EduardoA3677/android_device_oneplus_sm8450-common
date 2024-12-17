@@ -177,6 +177,10 @@ PRODUCT_COPY_FILES += \
 # Dolby
 $(call inherit-product, hardware/dolby/dolby.mk)
 
+# LMK
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.config.low_ram=false
+
 # Doze
 PRODUCT_PACKAGES += \
     OplusDoze

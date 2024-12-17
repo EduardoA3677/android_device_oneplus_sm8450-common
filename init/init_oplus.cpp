@@ -5,11 +5,25 @@
 
 #include <android-base/logging.h>
 #include <android-base/properties.h>
+#include <vector>
 
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
 using android::base::GetProperty;
+
+std::vector<std::string> ro_props_default_source_order = {
+    "",
+    "boot.",
+    "bootimage.",
+    "odm.",
+    "odm_dlkm.",
+    "product.",
+    "system.",
+    "system_ext.",
+    "vendor.",
+    "vendor_dlkm."
+};
 
 /*
  * SetProperty does not allow updating read only properties and as a result
@@ -27,23 +41,41 @@ void OverrideProperty(const char* name, const char* value) {
     }
 }
 
+void set_ro_build_prop(const std::string &prop, const std::string &value, bool product = true) {
+    std::string prop_name;
+    for (const auto &source : ro_props_default_source_order) {
+        if (product) {
+            prop_name = "ro.product." + source + prop;
+        } else {
+            prop_name = "ro." + source + "build." + prop;
+        }
+        OverrideProperty(prop_name.c_str(), value.c_str());
+    }
+}
+
 /*
  * Only for read-only properties. Properties that can be wrote to more
  * than once should be set in a typical init script (e.g. init.oplus.hw.rc)
  * after the original property has been set.
  */
 void vendor_load_properties() {
+    std::string model;
+    std::string device;
+    std::string name;
+
     auto prjname = std::stoi(GetProperty("ro.boot.prjname", "0"));
 
     switch (prjname) {
         // udon
         case 22881: // IN
-            OverrideProperty("ro.product.product.model", "CPH2487");
+            device = "OP5961L1";
+            name = "CPH2487";
+            model = "CPH2487";
             break;
         case 22803:
-            OverrideProperty("ro.product.device", "OP5913L1");
-            OverrideProperty("ro.product.vendor.device", "OP5913L1");
-            OverrideProperty("ro.product.product.model", "PHK110");
+            device = "OP5913L1";
+            name = "PHK110";
+            model = "PHK110";
             OverrideProperty("persist.vendor.display.pxlw.iris_feature", "0x407f0780");
             break;
         default:

@@ -71,12 +71,18 @@ void vendor_load_properties() {
             device = "OP5961L1";
             name = "CPH2487";
             model = "CPH2487";
+            OverrideProperty("persist.sys.oplus.region", "IN");
+            OverrideProperty("ro.vendor.oplus.regionmark", "IN");
+            OverrideProperty("ro.vendor.oplus.radio.sar_regionmark", "IN");
             break;
         case 22803:
             device = "OP5913L1";
             name = "PHK110";
             model = "PHK110";
             OverrideProperty("persist.vendor.display.pxlw.iris_feature", "0x407f0780");
+            OverrideProperty("persist.sys.oplus.region", "CN");
+            OverrideProperty("ro.vendor.oplus.regionmark", "CN");
+            OverrideProperty("ro.vendor.oplus.radio.sar_regionmark", "CN");
             break;
         default:
             LOG(ERROR) << "Unexpected project name: " << prjname;

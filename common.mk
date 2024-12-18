@@ -139,8 +139,7 @@ PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
 # Dex
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := verify
-DEX2OAT_TARGET_CPU_VARIANT := cortex-a76
-DEX2OAT_TARGET_CPU_VARIANT_RUNTIME := cortex-a76
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.common-V2-ndk_platform \

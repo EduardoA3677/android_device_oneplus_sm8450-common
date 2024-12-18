@@ -30,6 +30,8 @@ PRODUCT_PACKAGES += \
     libgui_shim \
     libhidlbase_shim
 
+PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService-Soong \

@@ -179,6 +179,9 @@ ro.telephony.default_network=33,33
 persist.vendor.sensors.debug.hal=0
 persist.vendor.sensors.enable.mag_filter=true
 
+# Update engine
+ro.virtual_ab.compression.threads=true
+
 # USB
 sys.usb.mtp.batchcancel=1
 vendor.usb.controller=a600000.dwc3

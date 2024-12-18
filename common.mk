@@ -512,6 +512,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.oplus
 
+# Virtualization service
+$(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
+
 # TrustedUI
 PRODUCT_PACKAGES += \
     android.hidl.memory.block@1.0.vendor \

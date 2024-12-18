@@ -184,10 +184,6 @@ $(call inherit-product, hardware/dolby/dolby.mk)
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.config.low_ram=false
 
-# Doze
-PRODUCT_PACKAGES += \
-    OplusDoze
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \

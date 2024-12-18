@@ -137,9 +137,6 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
-# Dex
-PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := verify
-
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.common-V2-ndk_platform \

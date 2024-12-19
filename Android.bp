@@ -1,4 +1,10 @@
 soong_namespace {
+        imports: [
+        "vendor/qcom/opensource/commonsys-intf/display",
+        "hardware/oplus",
+        "kernel/oneplus/sm8450",
+        "kernel/oneplus/sm8450-modules",
+    ],
 }
 
 install_symlink {

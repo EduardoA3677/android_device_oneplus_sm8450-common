@@ -103,7 +103,6 @@ TARGET_NEEDS_DTBOIMAGE := true
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_BOOTCONFIG:= \
     androidboot.hardware=qcom \
-    androidboot.hypervisor.protected_vm.supported=true \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3
 

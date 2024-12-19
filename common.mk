@@ -5,6 +5,8 @@
 #
 TARGET_DISABLE_EPPE := true
 
+$(call inherit-product, hardware/qcom-caf/common/common.mk)
+
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 
@@ -28,10 +30,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AntHalService-Soong \
     com.dsi.ant@1.0.vendor
-
-# APEX
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
-
 # Audio
 SOONG_CONFIG_NAMESPACES += android_hardware_audio
 SOONG_CONFIG_android_hardware_audio += \
@@ -183,6 +181,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \
     android.hardware.drm-service.clearkey
+
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
 # Dumpstate
 PRODUCT_PACKAGES += \
@@ -366,6 +366,8 @@ PRODUCT_PACKAGES += \
     vendor.oplus.hardware.osense.client-service
 
 # Overlays
+$(call inherit-product, hardware/oplus/overlay/generic/generic.mk)
+
 $(call inherit-product, hardware/oplus/overlay/qssi/qssi.mk)
 
 DEVICE_PACKAGE_OVERLAYS += \
@@ -448,7 +450,7 @@ PRODUCT_COPY_FILES += \
 
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 31
-BOARD_SHIPPING_API_LEVEL := 30
+BOARD_SHIPPING_API_LEVEL := 31
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

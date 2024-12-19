@@ -30,6 +30,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AntHalService-Soong \
     com.dsi.ant@1.0.vendor
+
+# Alert slider
+PRODUCT_PACKAGES += \
+    KeyHandler \
+    tri-state-key-calibrate
+
 # Audio
 SOONG_CONFIG_NAMESPACES += android_hardware_audio
 SOONG_CONFIG_android_hardware_audio += \
@@ -342,7 +348,7 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc-service.nxp \
     android.hardware.nfc@1.2.vendor \
     android.hardware.secure_element@1.2.vendor \
-        com.android.nfc_extras \
+    com.android.nfc_extras \
     Tag
 
 PRODUCT_COPY_FILES += \
@@ -571,6 +577,12 @@ WPA := wpa_cli
 
 # Package chip specific ko files if TARGET_WLAN_CHIP is defined.
 PRODUCT_PACKAGES += qca_cld3_qca6490.ko
+
+# WiFi firmware symlinks
+PRODUCT_PACKAGES += \
+    firmware_wlanmdsp.otaupdate_symlink \
+    firmware_wlan_mac.bin_symlink \
+    firmware_WCNSS_qcom_cfg.ini_symlink
 
 # WiFi Display
 PRODUCT_PACKAGES += \

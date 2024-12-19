@@ -24,12 +24,6 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
-PRODUCT_PACKAGES += \
-    libshim_ui \
-    libcodec2_shim \
-    libgui_shim \
-    libhidlbase_shim
-
 PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 
 # ANT+
@@ -555,9 +549,6 @@ PRODUCT_PACKAGES += \
 # Verified Boot
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
-
-# Vibrator
-$(call soong_config_set,OPLUS_LINEAGE_VIBRATOR_HAL,USE_EFFECT_STREAM,true)
 
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service.oplus

@@ -455,8 +455,9 @@ BOARD_SHIPPING_API_LEVEL := 31
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/google/interfaces \
-    hardware/google/pixel \
+    hardware/qcom-caf/sm8450/audio/agm/ipc/HwBinders/legacy \
+    kernel/oneplus/sm8450 \
+    kernel/oneplus/sm8450-modules \
     hardware/lineage/interfaces/power-libperfmgr \
     hardware/oplus \
     hardware/qcom-caf/common/libqti-perfd-client
@@ -491,7 +492,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml
 
-# Thermal
+$(call inherit-product, hardware/oplus/oplus-fwk/oplus-fwk.mk)
+l
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0-service.qti-v2
 

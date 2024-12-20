@@ -58,7 +58,7 @@ PRODUCT_PACKAGES += \
     libagm_mixer_plugin \
     libagm_pcm_plugin \
     libbatterylistener \
-    libhfp_pal \
+    libfmpal \
     libpalclient \
     libqcomvisualizer \
     libqcomvoiceprocessing \

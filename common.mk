@@ -58,7 +58,7 @@ PRODUCT_PACKAGES += \
     libagm_mixer_plugin \
     libagm_pcm_plugin \
     libbatterylistener \
-    libfmpal \
+    libhfp_pal \
     libpalclient \
     libqcomvisualizer \
     libqcomvoiceprocessing \
@@ -66,9 +66,10 @@ PRODUCT_PACKAGES += \
     libtinycompress \
     libvolumelistener \
     vendor.qti.hardware.AGMIPC@1.0-service \
-    libhfp_pal \
+    vendor.qti.hardware.pal@1.0-impl
 
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8450/audio/primary-hal
+AUDIO_PAL_DIR := hardware/qcom-caf/sm8450/audio/pal
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cape/audio_policy_configuration.xml \

@@ -54,7 +54,6 @@ AUDIO_FEATURE_ENABLED_SSR := true
 AUDIO_FEATURE_ENABLED_SVA_MULTI_STAGE := true
 BOARD_SUPPORTS_SOUND_TRIGGER := true
 BOARD_USES_ALSA_AUDIO := true
-TARGET_PROVIDES_AUDIO_HAL := true
 TARGET_USES_QCOM_MM_AUDIO := true
 
 # Bootloader
@@ -88,9 +87,7 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     vendor/lineage/config/device_framework_matrix.xml
 
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
-DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest_taro.xml\
-    hardware/qcom-caf/sm8450/audio/primary-hal/configs/common/manifest_non_qmaa.xml \
-    hardware/qcom-caf/sm8450/audio/primary-hal/configs/common/manifest_non_qmaa_extn.xml
+DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest_taro.xml
 ODM_MANIFEST_FILES := $(COMMON_PATH)/manifest_dsds.xml
 ODM_MANIFEST_FILES += $(COMMON_PATH)/manifest_lineage.xml
 

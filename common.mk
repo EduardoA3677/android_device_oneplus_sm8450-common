@@ -58,14 +58,13 @@ PRODUCT_PACKAGES += \
     libagm_mixer_plugin \
     libagm_pcm_plugin \
     libbatterylistener \
-    libfmpal \
+    libhfp_pal \
     libpalclient \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libstdc++.vendor \
     libtinycompress \
     libvolumelistener \
-    sound_trigger.primary.taro:64 \
     vendor.qti.hardware.AGMIPC@1.0-service \
     vendor.qti.hardware.pal@1.0-impl
 
@@ -457,7 +456,7 @@ PRODUCT_COPY_FILES += \
 
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 31
-BOARD_SHIPPING_API_LEVEL := 31
+BOARD_SHIPPING_API_LEVEL := 30
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -467,8 +466,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/lineage/interfaces/power-libperfmgr \
     hardware/oplus \
     hardware/qcom-caf/common/libqti-perfd-client
-    kernel/oneplus/sm8450 \
-    kernel/oneplus/sm8450-modules
 
 # Storage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)

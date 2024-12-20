@@ -41,6 +41,7 @@ TARGET_CPU_VARIANT := generic
 TARGET_CPU_VARIANT_RUNTIME := kryo300
 
 # Audio
+
 AUDIO_FEATURE_ENABLED_DLKM := true
 AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := false
 AUDIO_FEATURE_ENABLED_DTS_EAGLE := false
@@ -106,6 +107,7 @@ TARGET_NEEDS_DTBOIMAGE := true
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_BOOTCONFIG:= \
     androidboot.hardware=qcom \
+    androidboot.hypervisor.protected_vm.supported=true \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3
 

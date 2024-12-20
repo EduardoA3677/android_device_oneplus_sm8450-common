@@ -167,9 +167,12 @@ ro.incremental.enable=yes
 
 # Media
 debug.stagefright.c2inputsurface=-1
+debug.stagefright.ccodec=4
+debug.stagefright.omx_default_rank=0
 
 # Misc
 ro.vendor.qspm.enable=true
+
 
 # Netflix
 ro.netflix.bsp_rev=Q8450-34634-1
@@ -186,6 +189,9 @@ ro.telephony.default_network=33,33
 # Sensors
 persist.vendor.sensors.debug.hal=0
 persist.vendor.sensors.enable.mag_filter=true
+
+# Update engine
+ro.virtual_ab.compression.threads=true
 
 # USB
 sys.usb.mtp.batchcancel=1

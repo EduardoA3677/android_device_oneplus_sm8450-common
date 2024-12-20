@@ -40,12 +40,6 @@ PRODUCT_PACKAGES += \
 # APEX
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
-# Audio
-SOONG_CONFIG_NAMESPACES += android_hardware_audio
-SOONG_CONFIG_android_hardware_audio += \
-    run_64bit
-SOONG_CONFIG_android_hardware_audio_run_64bit := true
-
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
     android.hardware.audio.effect@7.0-impl \
@@ -56,6 +50,7 @@ PRODUCT_PACKAGES += \
     agmcompressplay \
     agmplay \
     audio.bluetooth.default \
+    audio.primary.taro \
     audio.r_submix.default \
     audio.usb.default \
     audioadsprpcd \

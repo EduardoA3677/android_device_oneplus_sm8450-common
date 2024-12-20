@@ -66,7 +66,7 @@ PRODUCT_PACKAGES += \
     libtinycompress \
     libvolumelistener \
     vendor.qti.hardware.AGMIPC@1.0-service \
-    libhfp_pal \
+    vendor.qti.hardware.pal@1.0-impl
 
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8450/audio/primary-hal
 

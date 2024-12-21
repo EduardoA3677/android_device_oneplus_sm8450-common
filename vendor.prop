@@ -166,9 +166,7 @@ persist.sys.fuse.passthrough.enable=true
 ro.incremental.enable=yes
 
 # Media
-debug.stagefright.c2inputsurface=-1
-debug.stagefright.ccodec=4
-debug.stagefright.omx_default_rank=0
+debug.stagefright.c2inputsurface=-
 
 # Misc
 ro.vendor.qspm.enable=true

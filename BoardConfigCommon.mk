@@ -198,6 +198,9 @@ include device/qcom/sepolicy_vndr/sm8450/SEPolicy.mk
 include hardware/oplus/sepolicy/qti/SEPolicy.mk
 include device/lineage/sepolicy/qcom/sepolicy.mk
 
+# SurfaceFlinger
+TARGET_USE_AOSP_SURFACEFLINGER := true
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag

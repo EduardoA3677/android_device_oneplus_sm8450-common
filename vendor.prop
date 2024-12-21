@@ -173,9 +173,6 @@ debug.stagefright.omx_default_rank=0
 # Misc
 ro.vendor.qspm.enable=true
 
-# HWUI
-debug.hwui.target_cpu_time_percent=30
-debug.hwui.use_hint_manager=true
 
 # Netflix
 ro.netflix.bsp_rev=Q8450-34634-1

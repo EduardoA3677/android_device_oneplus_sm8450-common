@@ -200,10 +200,6 @@ include device/lineage/sepolicy/qcom/sepolicy.mk
 
 # SurfaceFlinger
 TARGET_USE_AOSP_SURFACEFLINGER := true
-TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED := true
-MALLOC_SVELTE := true
-MALLOC_SVELTE_FOR_LIBC32 := true
-MALLOC_SVELTE_FOR_LIBC64 := true
 
 # Verified Boot
 BOARD_AVB_ENABLE := true

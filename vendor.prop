@@ -145,10 +145,6 @@ debug.egl.hw=0
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 ro.opengles.version=196610
-debug.hwui.renderer=skiagl
-debug.renderengine.backend=skiaglthreaded
-renderthread.skia.reduceopstasksplitting=true
-ro.sf.blurs_are_expensive=1
 ro.surface_flinger.enable_frame_rate_override=false
 graphics.gpu.profiler.support=true
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
@@ -196,8 +192,6 @@ ro.telephony.default_network=33,33
 # Sensors
 persist.vendor.sensors.debug.hal=0
 persist.vendor.sensors.enable.mag_filter=true
-vendor.sensor.hal.pickup=android.sensor.tilt_detector
-
 
 # Update engine
 ro.virtual_ab.compression.threads=true

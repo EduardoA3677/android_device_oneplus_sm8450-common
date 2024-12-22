@@ -62,6 +62,7 @@ void vendor_load_properties() {
     std::string model;
     std::string device;
     std::string name;
+    std::string marketname;
 
     auto prjname = std::stoi(GetProperty("ro.boot.prjname", "0"));
 
@@ -71,6 +72,7 @@ void vendor_load_properties() {
             device = "OP5961L1";
             name = "CPH2487";
             model = "CPH2487";
+            marketname = "OnePlus 11R 5G"
             OverrideProperty("persist.sys.oplus.region", "IN");
             OverrideProperty("ro.vendor.oplus.regionmark", "IN");
             OverrideProperty("ro.vendor.oplus.radio.sar_regionmark", "IN");
@@ -79,6 +81,7 @@ void vendor_load_properties() {
             device = "OP5913L1";
             name = "PHK110";
             model = "PHK110";
+            marketname = "OnePlus Ace 2"
             OverrideProperty("persist.vendor.display.pxlw.iris_feature", "0x407f0780");
             OverrideProperty("persist.sys.oplus.region", "CN");
             OverrideProperty("ro.vendor.oplus.regionmark", "CN");
@@ -91,5 +94,5 @@ void vendor_load_properties() {
     set_ro_build_prop("model", model);
     set_ro_build_prop("name", name);
     set_ro_build_prop("product", model, false);
-    set_ro_build_prop("marketname", "OnePlus 11R 5G");
+    set_ro_build_prop("marketname", "marketname");
 }

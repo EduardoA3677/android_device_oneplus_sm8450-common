@@ -166,11 +166,10 @@ persist.sys.fuse.passthrough.enable=true
 ro.incremental.enable=yes
 
 # Media
-debug.stagefright.c2inputsurface=-
+debug.stagefright.c2inputsurface=-1
 
 # Misc
 ro.vendor.qspm.enable=true
-
 
 # Netflix
 ro.netflix.bsp_rev=Q8450-34634-1

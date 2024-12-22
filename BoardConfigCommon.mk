@@ -110,17 +110,14 @@ BOARD_BOOTCONFIG:= \
     androidboot.hypervisor.protected_vm.supported=true \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3
-
-BOARD_KERNEL_CMDLINE := \
-    video=vfb:640x400,bpp=32,memsize=3072000 \
-    msm_geni_serial.con_enabled=0
-
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
+BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
+BOARD_USES_QCOM_MERGE_DTBS_SCRIPT := true
 TARGET_KERNEL_SOURCE := kernel/oneplus/sm8450
 TARGET_KERNEL_CONFIG := gki_defconfig vendor/waipio_GKI.config vendor/udon.config vendor/oplus_GKI.config vendor/debugfs.config
 
@@ -149,6 +146,9 @@ TARGET_KERNEL_EXT_MODULES := \
     qcom/opensource/eva-kernel \
     qcom/opensource/video-driver \
     qcom/opensource/wlan/qcacld-3.0/.qca6490
+
+# Lineage Health
+TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH := /sys/class/oplus_chg/battery/mmi_charging_enable
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
@@ -182,10 +182,12 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
-TARGET_POWER_LIBPERFMGR_MODE_EXTENSION_LIB := //$(COMMON_PATH)/power:libperfmgr-ext-udon
+# Power
+TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 
 # Recovery
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/init/fstab.default
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -199,9 +201,8 @@ BOOT_SECURITY_PATCH := 2024-05-05
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # SEPolicy
-include device/qcom/sepolicy_vndr/sm8450/SEPolicy.mk
+include device/qcom/sepolicy_vndr/SEPolicy.mk
 include hardware/oplus/sepolicy/qti/SEPolicy.mk
-include device/lineage/sepolicy/qcom/sepolicy.mk
 
 # Verified Boot
 BOARD_AVB_ENABLE := true

@@ -17,8 +17,6 @@ vendor.display.primary_mixer_stages=9
 persist.vendor.display.pxlw.iris_feature=0x400080
 
 # Media
-ro.odm.build.media_performance_class=31
-vendor.media.vpp.enable=0
 vendor.media.vpp.osie.enable=0
 vendor.media.vpp.sr.enable=0
 
